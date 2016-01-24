@@ -1,4 +1,3 @@
-'use strict';
 $(document).ready(function() {
   var scoreboard;
   var rankings = [];
