@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EverQuoteTest</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.scss">
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-6">
+        <h1>Rankings</h1>
+        <input type="text" id="eq-name" placeholder="Name">
+        <input type="number" id="eq-score" placeholder="Score" min=0>
+        <br>
+        <br>
+        <button class="btn btn-success" id="add">Add To Rankings</button>
+        <button class="btn btn-danger" id="clear">Clear Rankings</button>
+      </div>
+
+      <div class="col-md-6">
+        <ul id="rankings"></ul>
+      </div>
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.0.0/lodash.min.js"></script> -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
