@@ -3,20 +3,23 @@ $(document).ready(function() {
   var rankings = [];
   var displayScoreboard = function(rankings) {
     var rankPosition = 1;
-    $('#rankings').html('')
+    var tieScore = 0
+    var previousScore = 0;
+    $('table tbody').empty()
     for (var i = 0; i < rankings.length; i++) {
-      if (i > 0 && rankings[i-1].score != rankings[i].score) {
-        rankPosition += 1;
+      if (i > 0 && rankings[i-1].score !== rankings[i].score) {
+        rankPosition += tieScore;
+      } else {
+        tieScore += 1
       }
-      $('#rankings').append('<li>' + rankPosition + '. ' +rankings[i].name + ', ' + rankings[i].score + ' pts</li>')
-    }
+      $('table').append('<tr><td>' + rankPosition + '</td><td> ' +rankings[i].name + '</td><td> ' + rankings[i].score + ' pts</td></tr>');
+    };
   }
   var sortRankings = function(rankings) {
     rankings.sort(function(a, b) {
       return b.score-a.score;
     });
-  }
-
+  };
   $('#add').on('click', function() {
     var playerName = $('#eq-name').val();
     var playerScore = $('#eq-score').val();
@@ -32,11 +35,8 @@ $(document).ready(function() {
       alert("Please enter a name and a score");
     }
   });
-
   $('#clear').on('click', function() {
-    $('#rankings').html('');
+    $('table tbody').html('');
     rankings = [];
   });
-
-
 });
