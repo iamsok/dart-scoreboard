@@ -6,6 +6,7 @@ $(document).ready(function() {
     var tieScore = 0
     var previousScore = 0;
     $('table tbody').empty()
+    $('#rankings').empty()
     for (var i = 0; i < rankings.length; i++) {
       if (i > 0 && rankings[i-1].score !== rankings[i].score) {
         rankPosition += tieScore;
@@ -13,6 +14,8 @@ $(document).ready(function() {
         tieScore += 1
       }
       $('table').append('<tr><td>' + rankPosition + '</td><td> ' +rankings[i].name + '</td><td> ' + rankings[i].score + ' pts</td></tr>');
+
+      $('#rankings').append('<li>' + rankPosition + '. ' +rankings[i].name + ', ' + rankings[i].score + ' pts </li>');
     };
   }
   var sortRankings = function(rankings) {
@@ -37,6 +40,9 @@ $(document).ready(function() {
   });
   $('#clear').on('click', function() {
     $('table tbody').html('');
+    $('#rankings').html('');
     rankings = [];
   });
 });
+
+//Players can take any number of turns. The results of multiple turns are added to the players' score.//
