@@ -9,20 +9,20 @@
   <body>
 
     <div class="container eq-input">
-      <input type="text" id="eq-name" placeholder="Name">
-      <input type="number" id="eq-score" placeholder="Score" min=0>
+      <h1>EverQuote Dart Scoreboard</h1>
+      <input type="text" id="eq-name" type="submit" placeholder="Name">
+      <input type="number" id="eq-score" type="submit" placeholder="Score" min=0>
       <br>
       <br>
       <button class="btn btn-success" id="add">Add To Rankings</button>
       <button class="btn btn-danger" id="clear">Clear Rankings</button>
-      <button class="btn btn-default" id="add-game">Add Game</button>
     </div>
 
     <div class="container eq-leaderboard">
       <h3>Leaderboard</h3>
-      <table class="table table-striped" border="1">
+      <table class="table table" border="1">
         <thead>
-          <tr>
+          <tr class="border-bottom">
             <th>Rank</th>
             <th>Name</th>
             <th>Score</th>

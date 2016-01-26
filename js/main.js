@@ -1,28 +1,23 @@
+'use strict';
 $(document).ready(function() {
   var scoreboard;
   var rankings = [];
   var displayScoreboard = function(rankings) {
     var rankPosition = 1;
-    var tieScore = 0
-    var previousScore = 0;
-    $('table tbody').empty()
-    $('#rankings').empty()
+    $('#rankings').html('')
     for (var i = 0; i < rankings.length; i++) {
-      if (i > 0 && rankings[i-1].score !== rankings[i].score) {
-        rankPosition += tieScore;
-      } else {
-        tieScore += 1
+      if (i > 0 && rankings[i-1] == rankings[i]) {
+        rankPosition += 1
       }
-      $('table').append('<tr><td>' + rankPosition + '</td><td> ' +rankings[i].name + '</td><td> ' + rankings[i].score + ' pts</td></tr>');
-
-      $('#rankings').append('<li>' + rankPosition + '. ' +rankings[i].name + ', ' + rankings[i].score + ' pts </li>');
-    };
+      $('#rankings').append('<li>' + rankPosition + '. ' +rankings[i].name + ', ' + rankings[i].score + ' pts</li>')
+    }
   }
   var sortRankings = function(rankings) {
     rankings.sort(function(a, b) {
       return b.score-a.score;
     });
-  };
+  }
+
   $('#add').on('click', function() {
     var playerName = $('#eq-name').val();
     var playerScore = $('#eq-score').val();
@@ -38,11 +33,11 @@ $(document).ready(function() {
       alert("Please enter a name and a score");
     }
   });
+
   $('#clear').on('click', function() {
-    $('table tbody').html('');
     $('#rankings').html('');
     rankings = [];
   });
-});
 
-//Players can take any number of turns. The results of multiple turns are added to the players' score.//
+
+});

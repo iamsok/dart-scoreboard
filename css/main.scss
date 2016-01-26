@@ -1,16 +1,44 @@
-.eq-input {
+body {
+  background-color: #d3d3d3;
+}
+.eq-input{
+  color: #fff;
   display:block;
   text-align:center;
   vertical-align:middle;
-  width:100%;
-  height:100%;
-  background:green;
   padding: 10px;
+  background-image: url('http://cache3.asset-cache.net/xd/92887930.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE480187A7D0A56ECEF804E7679DD01108BC6B1944D0D98D4F37AA4BCAFFE70CFF817');
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+  background-position: 0px 60%;
+  background-repeat: no-repeat;
 }
-
+#eq-name, #eq-score{
+  margin: 0 auto;
+  margin-top:10px;
+  border: none;
+  border-radius: 3px;
+  color: #000;
+}
 .eq-leaderboard {
   text-align: center;
-  table th {
-    text-align: center
-  }
+}
+.table>tbody>tr>td {
+  border-top: 1px solid #000;
+}
+table>thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #000 !important;
+}
+.table th{
+  text-align:center;
+  border-bottom: thin;
+}
+.table tbody {
+  text-transform: capitalize;
+  border-bottom: thin;
+}
+#rankings {
+  text-transform: capitalize;
 }
