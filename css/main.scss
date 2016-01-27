@@ -14,7 +14,7 @@ body {
   background-position: 0px 60%;
   background-repeat: no-repeat;
 }
-#eq-name, #eq-score{
+#eq-player-input {
   margin: 0 auto;
   margin-top:10px;
   border: none;
@@ -31,14 +31,13 @@ table>thead>tr>th {
   vertical-align: bottom;
   border-bottom: 1px solid #000 !important;
 }
-.table th{
-  text-align:center;
-  border-bottom: thin;
-}
-.table tbody {
+.table tbody th{
   text-transform: capitalize;
   border-bottom: thin;
 }
 #rankings {
   text-transform: capitalize;
+}
+.list-unstyled {
+  text-align: left;
 }
