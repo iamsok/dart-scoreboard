@@ -16,12 +16,14 @@ var displayScoreboard = function(rankings) {
 
     $('#rankings').append('<li>' + rankPosition + '. ' +rankings[i].name + ', ' + rankings[i].score + ' pts </li>');
   };
-}
+};
+
 var sortRankings = function(rankings) {
   rankings.sort(function(a, b) {
     return b.score-a.score;
   });
 };
+
 $('#add').on('click', function() {
   var playerInput = $('#eq-player-input').val();
   var parsedPlayerInput = playerInput.split(',');
@@ -46,6 +48,12 @@ $('#add').on('click', function() {
   } else {
     alert("Please enter a name and a score in the format: John Doe, 15");
   }
+});
+$('input[type="text"]').on('keypress', function() {
+    var $this = $(this), value = $this.val();
+    if (value.length === 1) {
+        $this.val( value.charAt(0).toUpperCase() + value.substr(1) );
+    }
 });
 $('#clear').on('click', function() {
   $('table tbody').html('');
